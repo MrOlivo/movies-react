@@ -9,7 +9,7 @@ export function LandingPage() {
   return (
     <div>
       <Search />
-      <MoviesGrid key={search} />
+      <MoviesGrid key={search} search={search} />
     </div>
   );
 }
