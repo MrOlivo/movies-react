@@ -4,10 +4,11 @@ import { MovieCard } from './MovieCard';
 import { Spinner } from './Spinner';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import styles from './MoviesGrid.module.css';
+import { Empty } from './Empty';
 
 export function MoviesGrid({ search }) {
   const [movies, setMovies] = useState([]);
-  const [, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
@@ -22,6 +23,10 @@ export function MoviesGrid({ search }) {
       setIsLoading(false);
     });
   }, [search, page]);
+
+  if (!isLoading && movies.length === 0) {
+    return <Empty />;
+  }
 
   return (
     <InfiniteScroll
