@@ -19,14 +19,12 @@ export function Search() {
         <input
           className={styles.searchInput}
           type="text"
-          value={search}
+          value={search || ''}
           onChange={(e) => {
             navigate(`/?search=${e.target.value}`);
           }}
         />
-        <button className={styles.searchButton} type="submit">
-          <FaSearch size={20} />
-        </button>
+        <FaSearch size={20} color="black" className={styles.searchButton} />
       </div>
     </form>
   );
