@@ -20,6 +20,8 @@ export function Search() {
           className={styles.searchInput}
           type="text"
           value={search || ''}
+          placeholder="Movie title"
+          aria-label="Search movies input"
           onChange={(e) => {
             navigate(`/?search=${e.target.value}`);
           }}
