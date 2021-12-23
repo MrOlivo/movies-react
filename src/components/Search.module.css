@@ -9,6 +9,7 @@
 
 .searchButton {
   position: absolute;
+  padding: 3px 1em;
   right: 0;
   top: 0;
   cursor: pointer;
@@ -21,13 +22,12 @@
   font-size: 1.2rem;
   height: 2rem;
   border-radius: 10px;
-  padding: 5px 2rem 5px 10px;
+  padding: 5px 2.5rem 5px 10px;
   border: 3px solid white;
 }
 
 .searchInput:focus,
 .searchButton:focus {
   outline: none;
-  border: 3px solid #f88ec2;
-  box-shadow: 0 0 5px #ebbed4;
+  box-shadow: 0 0 1.5em #ebbed4;
 }
