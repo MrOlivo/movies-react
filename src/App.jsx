@@ -7,9 +7,11 @@ export function App() {
   return (
     <>
       <BrowserRouter>
-        <Link to="/">
-          <h1 className={style.title}>Movies</h1>
-        </Link>
+        <header>
+          <Link to="/">
+            <h1 className={style.title}>Movies</h1>
+          </Link>
+        </header>
         <main>
           <Routes>
             <Route index path="/" element={<LandingPage />} />
