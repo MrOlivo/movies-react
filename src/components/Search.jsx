@@ -1,13 +1,10 @@
 import styles from './Search.module.css';
 import { FaSearch } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
-import { useQuery } from '../hooks/useQuery';
+import { useSearchParams } from 'react-router-dom';
 
 export function Search() {
-  const query = useQuery();
+  const [query, setQuery] = useSearchParams();
   const search = query.get('search');
-
-  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,7 +20,7 @@ export function Search() {
           placeholder="Movie title"
           aria-label="Search movies input"
           onChange={(e) => {
-            navigate(`/?search=${e.target.value}`);
+            setQuery({ search: e.target.value });
           }}
         />
         <FaSearch size={20} color="black" className={styles.searchButton} />
