@@ -1,7 +1,8 @@
-import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
+import { BrowserRouter, Link, Navigate, Route, Routes } from 'react-router-dom';
+
 import style from './App.module.css';
-import { MovieDetails } from './pages/MovieDetails';
 import { LandingPage } from './pages/LandingPage';
+import { MovieDetails } from './pages/MovieDetails';
 
 export function App() {
   return (

@@ -1,6 +1,7 @@
-import styles from './Search.module.css';
 import { FaSearch } from 'react-icons/fa';
 import { useSearchParams } from 'react-router-dom';
+
+import styles from './Search.module.css';
 
 export function Search() {
   const [query, setQuery] = useSearchParams();

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { get } from '../utils/httpClient';
-import { MovieCard } from './MovieCard';
-import { Spinner } from './Spinner';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import styles from './MoviesGrid.module.css';
+
+import { get } from '../utils/httpClient';
 import { Empty } from './Empty';
+import { MovieCard } from './MovieCard';
+import styles from './MoviesGrid.module.css';
+import { Spinner } from './Spinner';
 
 export function MoviesGrid({ search }) {
   const [movies, setMovies] = useState([]);

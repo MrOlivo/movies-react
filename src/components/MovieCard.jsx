@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import { getMovieImage } from '../utils/getMovieImage';
 import styles from './MovieCard.module.css';
 
