@@ -4,7 +4,7 @@ import styles from './Spinner.module.css';
 
 export function Spinner() {
   return (
-    <div className={styles.spinner}>
+    <div data-testid='spinner' className={styles.spinner}>
       <FaSpinner className={styles.spinning} size={60} />
     </div>
   );
