@@ -8,7 +8,7 @@ export function LandingPage() {
   const [query] = useSearchParams();
   const search = query.get('search');
 
-  const debouncedSearch = useDebounce(search, 300);
+  const debouncedSearch = useDebounce(search, 500);
 
   return (
     <div>
