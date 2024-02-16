@@ -1,7 +1,18 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
 import { getMovieImage } from '../utils/getMovieImage';
 import styles from './MovieCard.module.css';
+
+// Your MovieCard component code...
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    poster_path: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+  }).isRequired,
+};
 
 export function MovieCard({ movie }) {
   const imageUrl = getMovieImage(movie.poster_path);
