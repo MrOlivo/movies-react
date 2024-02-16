@@ -9,15 +9,15 @@ export function App() {
     <>
       <BrowserRouter>
         <header>
-          <Link to="/">
+          <Link to="/movies-react/">
             <h1 className={style.title}>Movies</h1>
           </Link>
         </header>
         <main>
           <Routes>
-            <Route index path="/" element={<LandingPage />} />
-            <Route path="/movies/:movieId" element={<MovieDetails />} />
-            <Route path="*" element={<Navigate replace to="/" />} />
+            <Route index path="/movies-react/" element={<LandingPage />} />
+            <Route path="/movies-react/movie/:movieId" element={<MovieDetails />} />
+            <Route path="*" element={<Navigate replace to="/movies-react/" />} />
           </Routes>
         </main>
       </BrowserRouter>
