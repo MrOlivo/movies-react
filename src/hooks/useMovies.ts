@@ -1,8 +1,7 @@
 import { useInfiniteQuery } from 'react-query';
-
 import { get } from '../utils/httpClient';
 
-export function useMovies(search) {
+export function useMovies(search: string) {
   const result = useInfiniteQuery(
     ['movies', search],
     ({ pageParam = 1 }) => {

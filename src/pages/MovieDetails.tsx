@@ -32,7 +32,7 @@ export function MovieDetails() {
         </p>
         <p>
           <strong>Genres: </strong>
-          {movie.genres.map((genre) => genre.name).join(', ')}
+          {movie.genres.map((genre: {name: string}) => genre.name).join(', ')}
         </p>
         <p>
           <strong>Description: </strong>
