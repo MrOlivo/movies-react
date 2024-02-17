@@ -1,13 +1,13 @@
+import { FormEvent } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { useSearchParams } from 'react-router-dom';
-
 import styles from './Search.module.css';
 
 export function Search() {
   const [query, setQuery] = useSearchParams();
   const search = query.get('search');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
   };
 
