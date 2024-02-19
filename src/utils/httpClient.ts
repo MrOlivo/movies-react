@@ -1,6 +1,8 @@
+import { Movie } from "../components/MovieCard";
+
 const API = 'https://api.themoviedb.org/3';
 
-export async function get(path: string): Promise<any> {
+export async function get(path: string): Promise<Movie> {
   const response = await fetch(API + path, {
     headers: {
       Authorization:
