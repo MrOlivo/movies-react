@@ -1,14 +1,26 @@
-import { Movie } from "../components/MovieCard";
+import { Movie, MoviesResponse } from "../types/interfaces";
 
 const API = 'https://api.themoviedb.org/3';
+const TOKEN = import.meta.env.VITE_API_TOKEN;
 
-export async function get(path: string): Promise<Movie> {
+const HEADERS = {
+  Authorization:
+    `Bearer ${TOKEN}`,
+  'Content-Type': 'application/json;charset=utf-8',
+}
+
+export async function get(path: string): Promise<MoviesResponse> {
   const response = await fetch(API + path, {
-    headers: {
-      Authorization:
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NzUzN2ZmMTlmMzgxZGQ3YjY3ZWVlMWVhOGI4MTY0YSIsInN1YiI6IjVlM2ExNmU1MGMyNzEwMDAxODc1NTI4MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nOpZ_nBtA93tbzr6-rxD0760tssAAaSppyjRv9anArs',
-        'Content-Type': 'application/json;charset=utf-8',
-    }
+    headers: { ...HEADERS }
+  })
+
+  return response.json();
+}
+
+
+export async function getMovie(path: string): Promise<Movie> {
+  const response = await fetch(API + path, {
+    headers: { ...HEADERS }
   })
 
   return response.json();

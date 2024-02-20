@@ -1,5 +1,6 @@
 import { useInfiniteQuery } from 'react-query';
 import { get } from '../utils/httpClient';
+import { Movie, MoviesResponse } from '../types/interfaces';
 
 export function useMovies(search: string) {
   const result = useInfiniteQuery(
@@ -11,7 +12,7 @@ export function useMovies(search: string) {
       return get(searchUrl);
     },
     {
-      getNextPageParam: (lastPage) => {
+      getNextPageParam: (lastPage: MoviesResponse) => {
         if (lastPage.page === lastPage.total_pages) return false;
         return lastPage.page + 1;
       },
@@ -20,7 +21,7 @@ export function useMovies(search: string) {
 
   const movies =
     result.data?.pages.reduce(
-      (prevMovies, page) => prevMovies.concat(page.results),
+      (prevMovies: Movie[], page: MoviesResponse) => prevMovies.concat(page.results),
       []
     ) ?? [];
 

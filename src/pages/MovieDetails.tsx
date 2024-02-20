@@ -1,17 +1,16 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-
-import { Genre } from '../components/MovieCard';
 import { Spinner } from '../components/Spinner';
+import { Genre } from '../types/interfaces';
 import { getMovieImage } from '../utils/getMovieImage';
-import { get } from '../utils/httpClient';
+import { getMovie } from '../utils/httpClient';
 import styles from './MovieDetails.module.css';
 
 export function MovieDetails() {
   const { movieId } = useParams();
 
   const { data: movie, isLoading } = useQuery(['movieDetails', movieId], () =>
-    get('/movie/' + movieId)
+    getMovie('/movie/' + movieId)
   );
 
   if (isLoading) {
@@ -37,7 +36,7 @@ export function MovieDetails() {
         </p>
         <p>
           <strong>Genres: </strong>
-          {movie.genres.map((genre: Genre) => genre.name).join(', ')}
+          {movie.genres && movie.genres.map((genre: Genre) => genre.name).join(', ')}
         </p>
         <p>
           <strong>Description: </strong>
