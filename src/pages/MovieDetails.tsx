@@ -1,6 +1,7 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 
+import { Genre } from '../components/MovieCard';
 import { Spinner } from '../components/Spinner';
 import { getMovieImage } from '../utils/getMovieImage';
 import { get } from '../utils/httpClient';
@@ -15,6 +16,10 @@ export function MovieDetails() {
 
   if (isLoading) {
     return <Spinner />;
+  }
+
+  if (!movie) {
+    return <p>Movie not found.</p>;
   }
 
   const imageUrl = getMovieImage(movie.poster_path, 500, 750);
@@ -32,11 +37,19 @@ export function MovieDetails() {
         </p>
         <p>
           <strong>Genres: </strong>
-          {movie.genres.map((genre: {name: string}) => genre.name).join(', ')}
+          {movie.genres.map((genre: Genre) => genre.name).join(', ')}
         </p>
         <p>
           <strong>Description: </strong>
           {movie.overview}
+        </p>
+        <p>
+          <strong>Release date: </strong>
+          {movie.release_date}
+        </p>
+        <p>
+          <strong>Vote average: </strong>
+          {movie.vote_average}/10 from {movie.vote_count} votes
         </p>
       </div>
     </div>
