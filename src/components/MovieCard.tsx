@@ -1,7 +1,7 @@
+import styles from '@components/MovieCard.module.css';
+import { Movie } from '@types';
+import { getMovieImage } from '@utils/getMovieImage';
 import { Link } from 'react-router-dom';
-import { Movie } from '../types/interfaces';
-import { getMovieImage } from '../utils/getMovieImage';
-import styles from './MovieCard.module.css';
 
 interface MovieCardProps {
   movie: Movie;

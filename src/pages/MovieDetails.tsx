@@ -1,10 +1,10 @@
+import { Spinner } from '@components/Spinner';
+import styles from '@pages/MovieDetails.module.css';
+import { Genre } from '@types';
+import { getMovieImage } from '@utils/getMovieImage';
+import { getMovie } from '@utils/httpClient';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import { Spinner } from '../components/Spinner';
-import { Genre } from '../types/interfaces';
-import { getMovieImage } from '../utils/getMovieImage';
-import { getMovie } from '../utils/httpClient';
-import styles from './MovieDetails.module.css';
 
 export function MovieDetails() {
   const { movieId } = useParams();

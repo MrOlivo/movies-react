@@ -1,6 +1,6 @@
+import { Movie, MoviesResponse } from '@types';
+import { get } from '@utils/httpClient';
 import { useInfiniteQuery } from 'react-query';
-import { get } from '../utils/httpClient';
-import { Movie, MoviesResponse } from '../types/interfaces';
 
 export function useMovies(search: string) {
   const result = useInfiniteQuery(
