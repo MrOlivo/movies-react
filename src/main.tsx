@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { App } from './App';
-import './index.css';
+import 'scss/styles.scss'
+
+// Import all of Bootstrap's JS
+// import * as bootstrap from 'bootstrap'
 
 const queryClient = new QueryClient();
 
