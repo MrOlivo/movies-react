@@ -1,17 +1,17 @@
-import styles from '@components/MovieCard.module.css';
-import { Movie } from '@types';
-import { getMovieImage } from '@utils/getMovieImage';
-import { Link } from 'react-router-dom';
+import styles from "@components/MovieCard.module.css"
+import { Movie } from "@types"
+import { getMovieImage } from "@utils/getMovieImage"
+import { Link } from "react-router-dom"
 
 interface MovieCardProps {
-  movie: Movie;
+  movie: Movie
 }
 
 export function MovieCard({ movie }: MovieCardProps) {
-  const imageUrl = getMovieImage(movie.poster_path);
+  const imageUrl = getMovieImage(movie.poster_path)
   return (
     <li className={styles.movieCard}>
-      <Link to={'/movies-react/movie/' + movie.id}>
+      <Link to={`/movies-react/movie/${movie.id}`}>
         <img
           width={230}
           height={345}
@@ -22,5 +22,5 @@ export function MovieCard({ movie }: MovieCardProps) {
         <div>{movie.title}</div>
       </Link>
     </li>
-  );
+  )
 }

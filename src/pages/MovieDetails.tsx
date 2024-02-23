@@ -1,27 +1,27 @@
-import { Spinner } from '@components/Spinner';
-import styles from '@pages/MovieDetails.module.css';
-import { Genre } from '@types';
-import { getMovieImage } from '@utils/getMovieImage';
-import { getMovie } from '@utils/httpClient';
-import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
+import { Spinner } from "@components/Spinner"
+import styles from "@pages/MovieDetails.module.css"
+import { Genre } from "@types"
+import { getMovieImage } from "@utils/getMovieImage"
+import { getMovie } from "@utils/httpClient"
+import { useQuery } from "react-query"
+import { useParams } from "react-router-dom"
 
 export function MovieDetails() {
-  const { movieId } = useParams();
+  const { movieId } = useParams()
 
-  const { data: movie, isLoading } = useQuery(['movieDetails', movieId], () =>
-    getMovie('/movie/' + movieId)
-  );
+  const { data: movie, isLoading } = useQuery(["movieDetails", movieId], () =>
+    getMovie(`/movie/${movieId}`),
+  )
 
   if (isLoading) {
-    return <Spinner />;
+    return <Spinner />
   }
 
   if (!movie) {
-    return <p>Movie not found.</p>;
+    return <p>Movie not found.</p>
   }
 
-  const imageUrl = getMovieImage(movie.poster_path, 500, 750);
+  const imageUrl = getMovieImage(movie.poster_path, 500, 750)
   return (
     <div className={styles.detailsContainer}>
       <img
@@ -36,7 +36,7 @@ export function MovieDetails() {
         </p>
         <p>
           <strong>Genres: </strong>
-          {movie.genres && movie.genres.map((genre: Genre) => genre.name).join(', ')}
+          {movie.genres?.map((genre: Genre) => genre.name).join(", ")}
         </p>
         <p>
           <strong>Description: </strong>
@@ -52,5 +52,5 @@ export function MovieDetails() {
         </p>
       </div>
     </div>
-  );
+  )
 }

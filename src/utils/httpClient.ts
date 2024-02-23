@@ -1,27 +1,27 @@
-import { Movie, MoviesResponse } from "@types";
+import { Movie, MoviesResponse } from "@types"
 
-const API = 'https://api.themoviedb.org/3';
-const TOKEN = import.meta.env.VITE_API_TOKEN || "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NzUzN2ZmMTlmMzgxZGQ3YjY3ZWVlMWVhOGI4MTY0YSIsInN1YiI6IjVlM2ExNmU1MGMyNzEwMDAxODc1NTI4MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nOpZ_nBtA93tbzr6-rxD0760tssAAaSppyjRv9anArs";
+const API = "https://api.themoviedb.org/3"
+const TOKEN =
+  import.meta.env.VITE_API_TOKEN ||
+  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NzUzN2ZmMTlmMzgxZGQ3YjY3ZWVlMWVhOGI4MTY0YSIsInN1YiI6IjVlM2ExNmU1MGMyNzEwMDAxODc1NTI4MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nOpZ_nBtA93tbzr6-rxD0760tssAAaSppyjRv9anArs"
 
 const HEADERS = {
-  Authorization:
-    `Bearer ${TOKEN}`,
-  'Content-Type': 'application/json;charset=utf-8',
+  Authorization: `Bearer ${TOKEN}`,
+  "Content-Type": "application/json;charset=utf-8",
 }
 
 export async function get(path: string): Promise<MoviesResponse> {
   const response = await fetch(API + path, {
-    headers: { ...HEADERS }
+    headers: { ...HEADERS },
   })
 
-  return response.json();
+  return response.json()
 }
-
 
 export async function getMovie(path: string): Promise<Movie> {
   const response = await fetch(API + path, {
-    headers: { ...HEADERS }
+    headers: { ...HEADERS },
   })
 
-  return response.json();
+  return response.json()
 }

@@ -1,7 +1,7 @@
-import { LandingPage } from '@pages/LandingPage';
-import { MovieDetails } from '@pages/MovieDetails';
-import { BrowserRouter, Link, Navigate, Route, Routes } from 'react-router-dom';
-import style from './App.module.css';
+import { LandingPage } from "@pages/LandingPage"
+import { MovieDetails } from "@pages/MovieDetails"
+import { BrowserRouter, Link, Navigate, Route, Routes } from "react-router-dom"
+import style from "./App.module.css"
 
 export function App() {
   return (
@@ -15,11 +15,17 @@ export function App() {
         <main>
           <Routes>
             <Route index path="/movies-react/" element={<LandingPage />} />
-            <Route path="/movies-react/movie/:movieId" element={<MovieDetails />} />
-            <Route path="*" element={<Navigate replace to="/movies-react/" />} />
+            <Route
+              path="/movies-react/movie/:movieId"
+              element={<MovieDetails />}
+            />
+            <Route
+              path="*"
+              element={<Navigate replace to="/movies-react/" />}
+            />
           </Routes>
         </main>
       </BrowserRouter>
     </>
-  );
+  )
 }
