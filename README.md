@@ -1,4 +1,4 @@
-# Movies w/ React () + Vite
+# Movies w/ React + Vite
 
 This is a brief summary of your project. It should explain what the project does, who it's for, and why it exists.
 
