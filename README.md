@@ -1,5 +1,8 @@
 # Movies w/ React + Vite
 
+[![Deploy to GitHub Pages](https://img.shields.io/github/actions/workflow/status/MrOlivo/movies-react/deploy.yml?style=for-the-badge&labelColor=363a4f&color=a6da95)](https://github.com/MrOlivo/movies-react/actions/workflows/deploy.yml)
+[![CodeQL](https://img.shields.io/github/actions/workflow/status/MrOlivo/movies-react/github-code-scanning/codeql?label=CodeQL&style=for-the-badge&labelColor=363a4f&color=b7bdf8)](https://github.com/MrOlivo/movies-react/actions/workflows/github-code-scanning/codeql)
+
 This is a brief summary of your project. It should explain what the project does, who it's for, and why it exists.
 
 ## Technologies Used
